@@ -1,22 +1,9 @@
 PipelineSecrets: {}
-cleanup:
-  Annotations:
-    helm.sh/hook: pre-delete
-    helm.sh/hook-delete-policy: hook-succeeded
-  Args:
-  - --cleanup
-expose:
-  Annotations:
-    helm.sh/hook: post-install,post-upgrade
-    helm.sh/hook-delete-policy: hook-succeeded
-  Args:
-  - --v
-  - 4
-  config:
-    domain: '*.staging.arturo.ai'
-    exposer: Ingress
-    http: "true"
+controllerbuild: {}
 jenkins:
   Servers:
-    Global: {}
+    Global:
+      EnvVars:
+        DOCKER_REGISTRY: 108971624538.dkr.ecr.us-east-1.amazonaws.com
+        TILLER_NAMESPACE: kube-system
 prow: {}
