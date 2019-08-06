@@ -2,5 +2,8 @@ PipelineSecrets: {}
 controllerbuild: {}
 jenkins:
   Servers:
-    Global: {}
+    Global:
+      EnvVars:
+        DOCKER_REGISTRY: 108971624538.dkr.ecr.us-east-1.amazonaws.com
+        TILLER_NAMESPACE: kube-system
 prow: {}
