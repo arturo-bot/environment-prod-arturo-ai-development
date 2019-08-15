@@ -1,4 +1,4 @@
 dependencies:
 - name: arbiter-port
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.1.2-development-4
+  version: 0.1.2-development-1
